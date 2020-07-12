@@ -135,16 +135,19 @@ What command would we use to:
 <details>
 <summary>  ...view our new location?</summary>
 <br>
+
 ```bash
   pwd
 ```
+
 </details>
 <details>
 <summary>  ...view the content of our new directory?</summary>
-<br>
+<p>
 ```bash
   ls
 ```
+</p>
 </details>
 
 ## 4.3 Going back/up a directory
