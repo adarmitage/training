@@ -358,8 +358,9 @@ Here it is:
 http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf
 
 Trimmomatic isn't an easy program to run.
-90% of bioinformatics is bashing your head against a wall while wandering why a
-program doesn't run.
+For new users, 90% of bioinformatics is bashing your head against a wall while
+wandering why a program doesn't run. This is perfectly normal.
+
 I suggest you copy the lines below, rather than type these commands yourself.
 
 Trimmomatic is a program written in the language Java, this means we need to run
