@@ -96,7 +96,7 @@ it is empty using the ls command to see file size.
 Make directory command:
 
 ```bash
-  mkdir test
+  mkdir workshop1
 ```
 
 
@@ -109,7 +109,7 @@ This means it can be dangerous to delete whole directories (including everything
 The rm command wont let us delete a folder
 
 ```bash
-  rm test
+  rm workshop1
 ```
 
 It will let us delete a folder if we use the proper flag.
@@ -121,7 +121,7 @@ Can you identify which flag to use from the manual:
 ```
 
 ```bash
-  rm -r test
+  rm -r workshop1
   ls
 ```
 
@@ -136,7 +136,7 @@ Can you identify which flag to use from the manual:
 Make directory command:
 
 ```bash
-  mkdir test
+  mkdir workshop1
 ```
 
 ## 4.2 Change directory
@@ -144,7 +144,7 @@ Make directory command:
 The change directory command
 
 ```bash
-  cd test
+  cd workshop1
 ```
 
 What command would we use to:
@@ -196,10 +196,10 @@ to producing multiple directories!
 
 # Step 5. How to copy and move files?
 
-Lets move to the test director that we created for this part of the workshop:
+Lets move to the workshop1 directory that we created for this part of the workshop:
 
 ```bash
-  cd /home/ec2-user/test
+  cd /home/ec2-user/workshop1
 ```
 
 ## 5.1 Identify a file from elsewhere on the computer:
@@ -338,7 +338,7 @@ I have then subsetted 1million reads for us to work with.
 Lets prepare a directory to move these files into
 
 ```bash
-  cd /home/ec2-user/test
+  cd /home/ec2-user/workshop1
   mkdir trimming
   cd trimming
   cp /home/ec2-user/data/illumina/SRR5368359_1M_reads-F.fastq.gz f_read.fq.gz
@@ -425,7 +425,7 @@ How has trimming affected file sizes?
 Lets make a directory to perform the assembly in:
 
 ```bash
-  cd /home/ec2-user/test
+  cd /home/ec2-user/workshop1
   mkdir assembly
   cd assembly
 ```
@@ -511,7 +511,7 @@ on this server.
 Let's go back to our sanger sequence data example
 
 ```bash
-  cd /home/ec2-user/test/fasta
+  cd /home/ec2-user/workshop1/fasta
   ls endoPG_alignment_trimmed.fa
 ```
 
@@ -671,7 +671,7 @@ This could:
   * performing an analysis each time on a different dataset.
 
 ```bash
-  cd /home/ec2-user/test
+  cd /home/ec2-user/workshop1
   mkdir loops
   cd loops
 ```
