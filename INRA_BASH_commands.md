@@ -304,12 +304,11 @@ focussed for now and show how we can run a bioinformatics program on the cluster
 
 # Step 7. Running bioinformatics programs
 
-The server comes with basic BASH programs installed (cd, mv, cp, less, nano etc.).
+The server comes with basic BASH programs installed (mv, cp, less, nano etc.).
 
 We can use which to show where these programs are actually installed:
 
 ```bash
-  which cd
   which mv
   which less
 ```
@@ -369,21 +368,23 @@ it slightly differently to other programs.
 We specify that we are using Java, then give it the location of the installed program.
 
 ```bash
-java -jar /home/ec2-user/prog/trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar
+  cd /home/ec2-user/workshop1/trimming
+
+  java -jar /home/ec2-user/prog/trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar
 ```
 
 There are a lot of commands to enter here on a single line. We can split this
 onto multiple lines using the \ character.
 
 ```bash
-java -jar /home/ec2-user/prog/trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar \
-  PE -phred33 -trimlog log.txt \
-  f_read.fq.gz \
-  r_read.fq.gz \
-  f_read_trimmed_paired.fq.gz f_read_trimmed_unpaired.fq.gz \
-  r_read_trimmed_paired.fq.gz r_read_trimmed_unpaired.fq.gz \
-  ILLUMINACLIP:/home/ec2-user/prog/trimmomatic/Trimmomatic-0.39/adapters/illumina_PE.fasta:2:30:10 \
-  LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:25
+  java -jar /home/ec2-user/prog/trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar \
+    PE -phred33 -trimlog log.txt \
+    f_read.fq.gz \
+    r_read.fq.gz \
+    f_read_trimmed_paired.fq.gz f_read_trimmed_unpaired.fq.gz \
+    r_read_trimmed_paired.fq.gz r_read_trimmed_unpaired.fq.gz \
+    ILLUMINACLIP:/home/ec2-user/prog/trimmomatic/Trimmomatic-0.39/adapters/illumina_PE.fasta:2:30:10 \
+    LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:25
 ```
 
 ## 7.3 Viewing trimming outputs
@@ -459,7 +460,7 @@ After reading the manual we may come to a conclusion on the commands we want to 
 Lets set the assembly running:
 
 ```bash
-  spades.py --isolate -m 8 --pe1-1 ../trimming/f_read_trimmed_paired.fq.gz --pe1-2 ../trimming/r_read_trimmed_paired.fq.gz -o spades-test
+  spades.py --isolate -m 4 --pe1-1 ../trimming/f_read_trimmed_paired.fq.gz --pe1-2 ../trimming/r_read_trimmed_paired.fq.gz -o spades-test
 ```
 
 <!--
@@ -626,8 +627,8 @@ The $ symbol tells BASH to *interpret this*
 Note the difference between using "" and using '' symbols
 
 ```bash
-  echo "$VARIABLE"
-  echo '$VARIABLE'
+  echo "$VARIABLE1"
+  echo '$VARIABLE1'
 ```
 
 We can also perform commands and use it to set variables.
@@ -638,7 +639,7 @@ the $ symbol. Again, this means *interpret this*.
 
 ```bash
   FILE1=$(ls /home/ec2-user/data/illumina/SRR5368359_1M_reads-F.fastq.gz)
-  echo $File1
+  echo $FILE1
 ```
 
 How can this help us write commands for our programs? - e.g. trimming
