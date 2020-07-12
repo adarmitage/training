@@ -2,7 +2,10 @@
 # BASH workshop commands
 
 
+
+
 # Step 1. Where am I, how do I get help on a command?
+
 
 ## 1.1 Where am I?
 
@@ -12,11 +15,13 @@ print working directory
   pwd
 ```
 
+
 ## 1.2 What is in my current directory?
 
 ```bash
   ls
 ```
+
 
 ## 1.3 Can I get more information than this?
 
@@ -34,6 +39,7 @@ Will also show the same result if we do:
   ls -lh
 ```
 
+
 ## 1.4 How do we know what options are available for a command?
 
 Use the Manual command
@@ -48,6 +54,8 @@ F moves forward a page
 "q" allows us to quit the manual and returns the screen.
 
 
+
+
 # Step 2. What are some common commands?
 
 See cheat sheet:
@@ -56,7 +64,10 @@ https://courses.cs.washington.edu/courses/cse391/17sp/bash.html
 You will become familiar with commands are available as we progress.
 
 
+
+
 # Step 3. How do I create / delete a file?
+
 
 ## 3.1 Make an empty file:
 
@@ -72,11 +83,13 @@ it is empty using the ls command to see file size.
   ls -lh file1.txt
 ```
 
+
 ## 3.2 Delete a file
 
 ```bash
   rm file1.txt
 ```
+
 
 ## 3.3 Create a directory (folder)
 
@@ -85,6 +98,7 @@ Make directory command:
 ```bash
   mkdir test
 ```
+
 
 ## 3.4 Delete a directory
 
@@ -110,6 +124,8 @@ Can you identify which flag to use from the manual:
   rm -r test
   ls
 ```
+
+
 
 
 # Step 4. How do I move around?
@@ -143,11 +159,12 @@ What command would we use to:
 </details>
 <details>
 <summary>  ...view the content of our new directory?</summary>
-<p>
+<br>
+
 ```bash
   ls
 ```
-</p>
+
 </details>
 
 ## 4.3 Going back/up a directory
@@ -173,6 +190,8 @@ Try practicing some of these commands.
 Make a directory, move in and out of it, and back to your home directory.
 Note - it important not to use spaces in file or directory names, this may lead
 to producing multiple directories!
+
+
 
 
 # Step 5. How to copy and move files?
@@ -227,6 +246,8 @@ ls
 *With this, we now have to tools to navigate the cluster, move copy and delete files.*
 
 
+
+
 # Step 6. Viewing files and extracting information
 
 We can view and edit files using some specialised programs
@@ -246,10 +267,12 @@ less uses automatic line wrapping to show more information on the screen.
 <details>
 <summary>Can you use the manual page for less to find a flag to turn this off?</summary>
 <br>
+
 ```bash
   man less
   less -S endoPG_alignment_trimmed.fa
 ```
+
 </details>
 
 
@@ -275,6 +298,8 @@ These give BASH a lot of its "power" as a computing language.
 
 But BASH is the computing environment for the server. Lets keep bioinformatics
 focussed for now and show how we can run a bioinformatics program on the cluster.
+
+
 
 
 # Step 7. Running bioinformatics programs
@@ -320,6 +345,8 @@ Lets prepare a directory to move these files into
   cp /home/ec2-user/data/illumina/SRR5368359_1M_reads-R.fastq.gz r_read.fq.gz
   ls
 ```
+
+
 
 
 ## Step 7.2 Trimming adapters and low quality data from illumina sequencing reads
@@ -374,17 +401,21 @@ Output files have been produced by Trimmomatic
 <details>
 <summary>...What files are present?</summary>
 <br>
+
 ```bash
   ls
 ```
+
 </details>
 How has trimming affected file sizes?
 <details>
 <summary>...What files are present?</summary>
 <br>
+
 ```bash
   ls -lh
 ```
+
 </details>
 
 ## 7. Performing genome assembly using trimmed sequences
@@ -409,8 +440,10 @@ Where are the trimmed illumina reads in comparison to our current location?
 <details>
 <summary>What is the first step of running a bioinformatics program?</summary>
 <br>
+
 Here is the manual:
 http://cab.spbu.ru/files/release3.14.0/manual.html
+
 </details>
 
 This program isn't written in Java, meaning it is simpler to run
@@ -454,6 +487,8 @@ The scaffolds.fasta file is the "final result" from spades
 -->
 
 
+
+
 ## Step 7 Assessing assembly quality
 
 ## 7.6 Running QUAST
@@ -469,6 +504,8 @@ Note - Quast has a lot of additional features, I have just set up the most basic
 on this server.
 
 
+
+
 # Steps 8-12 Advanced BASH concepts
 
 Let's go back to our sanger sequence data example
@@ -477,6 +514,9 @@ Let's go back to our sanger sequence data example
   cd /home/ec2-user/test/fasta
   ls endoPG_alignment_trimmed.fa
 ```
+
+
+
 
 # Step 8 Expanded lists of simple BASH commands
 
@@ -494,22 +534,28 @@ Tip - try looking at the manual for some of these
 <details>
 <summary>What flag would you give to wc to show the number of lines in a file?</summary>
 <br>
+
 ```bash
   wc -l endoPG_alignment_trimmed.fa
 ```
+
 </details>
 
 <details>
 <summary>What command and flag would you use to head to specify the first five lines?</summary>
 <br>
+
 ```bash
   head -n5 endoPG_alignment_trimmed.fa
 ```
+
 </details>
 
 
 There are many other useful BASH commands:
 https://courses.cs.washington.edu/courses/cse391/17sp/bash.html
+
+
 
 
 # Step 9 Pipes and redirects
@@ -534,9 +580,11 @@ This is what makes BASH such a powerful language.
 <details>
 <summary>How could you count the number of fasta accessions in a file?</summary>
 <br>
+
 ```bash
   cat endoPG_alignment_trimmed.fa | grep '>' | wc -l
 ```
+
 </details>
 
 
@@ -551,6 +599,9 @@ cat endoPG_alignment_trimmed.fa | grep '>' | head -n 5 > endoPG_headers_top5.txt
 
 We can use two >> characters to append to the end of a file rather than making a
 new file.
+
+
+
 
 # Step 10 Variables
 
@@ -608,6 +659,9 @@ java -jar $INSTALL_DIRECTORY/trimmomatic-0.39.jar \
   LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:25
 ```
 
+
+
+
 # Step 11 Looping and conditionals
 
 We often find ourselves wanting to do the same thing many times.
@@ -655,6 +709,8 @@ We can use them as input for a loop:
 ```
 
 There are other conditional statements such as IF and WHILE.
+
+
 
 
 # Step 12 Putting commands into a script
