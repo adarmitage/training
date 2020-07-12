@@ -4,7 +4,7 @@
 
 # Step 1. Where am I, how do I get help on a command?
 
-## Where am I?
+## 1.1 Where am I?
 
 print working directory
 
@@ -12,13 +12,13 @@ print working directory
   pwd
 ```
 
-## What is in my current directory?
+## 1.2 What is in my current directory?
 
 ```bash
   ls
 ```
 
-## Can I get more information than this?
+## 1.3 Can I get more information than this?
 
 Flags give increased functionality to a command
 
@@ -34,7 +34,7 @@ Will also show the same result if we do:
   ls -lh
 ```
 
-## How do we know what options are available for a command?
+## 1.4 How do we know what options are available for a command?
 
 Use the Manual command
 
@@ -58,7 +58,7 @@ You will become familiar with commands are available as we progress.
 
 # Step 3. How do I create / delete a file?
 
-## Make an empty file:
+## 3.1 Make an empty file:
 
 ```bash
   touch file1.txt
@@ -72,13 +72,13 @@ it is empty using the ls command to see file size.
   ls -lh file1.txt
 ```
 
-## Delete a file
+## 3.2 Delete a file
 
 ```bash
   rm file1.txt
 ```
 
-## Create a directory (folder)
+## 3.3 Create a directory (folder)
 
 Make directory command:
 
@@ -86,7 +86,7 @@ Make directory command:
   mkdir test
 ```
 
-## Delete a directory
+## 3.4 Delete a directory
 
 The rm command can be reversed (files aren't moved to a trash folder)
 
@@ -115,7 +115,7 @@ Can you identify which flag to use from the manual:
 # Step 4. How do I move around?
 
 
-## Create a directory (folder)
+## 4.1 Create a directory (folder)
 
 Make directory command:
 
@@ -123,7 +123,7 @@ Make directory command:
   mkdir test
 ```
 
-## Change directory
+## 4.2 Change directory
 
 The change directory command
 
@@ -132,15 +132,22 @@ The change directory command
 ```
 
 What command would we use to:
-  view our new location?
-  view the content of our new directory?
-
+<details>
+<summary>  ...view our new location?</summary>
+<br>
 ```bash
   pwd
+```
+</details>
+<details>
+<summary>  ...view the content of our new directory?</summary>
+<br>
+```bash
   ls
 ```
+</details>
 
-## Going back/up a directory
+## 4.3 Going back/up a directory
 we can also go up a directory
 
 . can be used to represent the current directory and .. can be used to
@@ -150,7 +157,7 @@ represent the above directory.
   cd ..
 ```
 
-## Move to a specific location in the directory structure
+## 4.4 Move to a specific location in the directory structure
 
 We have been moving relative to our current location. We can also navigate to a
 specific location on the computer by using the absolute filepath.
@@ -173,7 +180,7 @@ Lets move to the test director that we created for this part of the workshop:
   cd /home/ec2-user/test
 ```
 
-## Identify a file from elsewhere on the computer:
+## 5.1 Identify a file from elsewhere on the computer:
 
 Lets first identify the file we are interested in copying
 
@@ -189,7 +196,7 @@ Note - using tab completion as you build a path can make this easier.
   ls ../data/sanger/endoPG_alignment_trimmed.fa
 ```
 
-## Copying a file:
+## 5.2 Copying a file:
 
 The copy command can be used:
 
@@ -200,7 +207,7 @@ a new filename and the file would be renamed when copied.
   cp ../data/sanger/endoPG_alignment_trimmed.fa .
 ```
 
-## Moving a file:
+## 5.3 Moving a file:
 
 The mv command can be used to move or rename a file.
 
@@ -214,14 +221,14 @@ cd fasta
 ls
 ```
 
-With this, we now have to tools to navigate the cluster, move copy and delete files.
+*With this, we now have to tools to navigate the cluster, move copy and delete files.*
 
 
 # Step 6. Viewing files and extracting information
 
 We can view and edit files using some specialised programs
 
-## View a file using less
+## 6.1 View a file using less
 
 Less is a simple program to view file contents. It is the same as the viewing
 program with used with the manual command.
@@ -233,14 +240,19 @@ program with used with the manual command.
 We can quit this file using q. f and b can be used to quickly navigate forward/backwards a page.
 
 less uses automatic line wrapping to show more information on the screen.
-Can you use the manual page for less to find a flag to turn this off?
-
+<details>
+<summary>Can you use the manual page for less to find a flag to turn this off?</summary>
+<br>
 ```bash
-man less
-less -S endoPG_alignment_trimmed.fa
+  man less
+  less -S endoPG_alignment_trimmed.fa
 ```
+</details>
 
-## Edit a file using nano
+
+
+
+## 6.2 Edit a file using nano
 
 ```bash
 nano endoPG_alignment_trimmed.fa
@@ -253,7 +265,7 @@ Y (yes we want to save)
 Enter (keep the current filename)
 
 
-I would consider these the core skills of BASH.
+*I would consider these the core skills of BASH.*
 
 There are a lot of commands to view and manipulate files.
 These give BASH a lot of its "power" as a computing language.
@@ -284,7 +296,7 @@ These have been installed into
 
 We can discuss installation of programs on Friday.
 
-## Identify illumina sequence data
+## 7.1 Identify illumina sequence data
 
 I have downloaded an illumina sequencing run from NCBI (fungal species)
 
@@ -307,7 +319,7 @@ Lets prepare a directory to move these files into
 ```
 
 
-## Step 7a Trimming adapters and low quality data from illumina sequencing reads
+## Step 7.2 Trimming adapters and low quality data from illumina sequencing reads
 
 We want to run the program Trimmomatic. The first step of running a bioinformatics
 program is to read the manual. These aren't BASH programs, so we may have to do
@@ -316,9 +328,10 @@ some googling to find it.
 Here it is:
 http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf
 
-90% of bioinformatics is bashing your head against a wall wandering why a program
-doesn't run. Trimmomatic isn't an easy program to run.
-I suggest you copy the lines below, rather than type them yourself.
+Trimmomatic isn't an easy program to run.
+90% of bioinformatics is bashing your head against a wall while wandering why a
+program doesn't run.
+I suggest you copy the lines below, rather than type these commands yourself.
 
 Trimmomatic is a program written in the language Java, this means we need to run
 it slightly differently to other programs.
@@ -343,7 +356,7 @@ java -jar /home/ec2-user/prog/trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar 
   LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:25
 ```
 
-## Viewing trimming outputs
+## 7.3 Viewing trimming outputs
 
 We got some output from running trimmomatic. What does it tell us?
 
@@ -354,18 +367,26 @@ Input Read Pairs: 2116469 Both Surviving: 2060415 (97.35%) Forward Only Survivin
 .54%) Reverse Only Surviving: 1745 (0.08%) Dropped: 581 (0.03%)
 ```
 
-OUtput files have been produced by Trimmomatic
-What files are present?
-How has trimming affected file sizes?
-
+Output files have been produced by Trimmomatic
+<details>
+<summary>...What files are present?</summary>
+<br>
 ```bash
   ls
+```
+</details>
+How has trimming affected file sizes?
+<details>
+<summary>...What files are present?</summary>
+<br>
+```bash
   ls -lh
 ```
+</details>
 
-## Step 7b Performing genome assembly using trimmed sequences
+## 7. Performing genome assembly using trimmed sequences
 
-## Making a directory for the assembly
+## 7.4 Making a directory for the assembly
 
 Lets make a directory to perform the assembly in:
 
@@ -380,17 +401,26 @@ Where are the trimmed illumina reads in comparison to our current location?
   ls ../trimming
 ```
 
-## Running the assembly:
+## 7.5 Running the assembly:
 
-What is the first step of running a bioinformatics program?
-
-here is the manual:
+<details>
+<summary>What is the first step of running a bioinformatics program?</summary>
+<br>
+Here is the manual:
 http://cab.spbu.ru/files/release3.14.0/manual.html
+</details>
 
-This program isnt written in Java, meaning it is simpler to run
+This program isn't written in Java, meaning it is simpler to run
 
+We can view spades and its options by typing:
 
-lets set the assembly running:
+```bash
+  spades.py --help
+```
+
+After reading the manual we may come to a conclusion on the commands we want to run.
+
+Lets set the assembly running:
 
 ```bash
   spades.py --isolate -m 8 --pe1-1 ../trimming/f_read_trimmed_paired.fq.gz --pe1-2 ../trimming/r_read_trimmed_paired.fq.gz -o spades-test
@@ -401,7 +431,7 @@ lets set the assembly running:
 11:07 - finished 2Gb not exceeded
 -->
 
-this has produced a number of output files. We can discuss assembly output files
+This has produced a number of output files. We can discuss assembly output files
 in the small group discussion following the genome assembly session.
 
 Notable files here are the spades log file, the contigs.fasta and the
@@ -414,12 +444,16 @@ The scaffolds.fasta file is the "final result" from spades
   less spades-test/scaffolds.fasta
 ```
 
+<!--
 ```bash
   cat spades-test/contigs.fasta | grep '>' | wc -l
 ```
+-->
 
 
-## Step 7c Assess assembly quality using QUAST
+## Step 7 Assessing assembly quality
+
+## 7.6 Running QUAST
 
 Here is the Quast manual:
 http://quast.sourceforge.net/docs/manual.html
@@ -432,10 +466,9 @@ Note - Quast has a lot of additional features, I have just set up the most basic
 on this server.
 
 
-
 # Steps 8-12 Advanced BASH concepts
 
-lets go back to our sanger sequence data example
+Let's go back to our sanger sequence data example
 
 ```bash
   cd /home/ec2-user/test/fasta
@@ -455,13 +488,22 @@ lets go back to our sanger sequence data example
 
 Tip - try looking at the manual for some of these
 
-What flag would you give to wc to show the number of lines in a file?
-What flag would you use to head to specify a number of lines to return?
-
+<details>
+<summary>What flag would you give to wc to show the number of lines in a file?</summary>
+<br>
 ```bash
   wc -l endoPG_alignment_trimmed.fa
+```
+</details>
+
+<details>
+<summary>What command and flag would you use to head to specify the first five lines?</summary>
+<br>
+```bash
   head -n5 endoPG_alignment_trimmed.fa
 ```
+</details>
+
 
 There are many other useful BASH commands:
 https://courses.cs.washington.edu/courses/cse391/17sp/bash.html
@@ -484,11 +526,16 @@ This is what makes BASH such a powerful language.
   cat endoPG_alignment_trimmed.fa | grep '>' | sort | head -n 5
 ```
 
-How could you count the number of fasta accessions in a file?
 
+
+<details>
+<summary>How could you count the number of fasta accessions in a file?</summary>
+<br>
 ```bash
   cat endoPG_alignment_trimmed.fa | grep '>' | wc -l
 ```
+</details>
+
 
 We can also redirect our output from stdout and into a new file.
 
@@ -516,16 +563,17 @@ Storing variables means:
 We can set a variable by:
 
 ```bash
-VARIABLE1="hello world"
+  VARIABLE1="hello world"
 ```
 
 We can call it again by using the variable name after a $ symbol.
 The $ symbol tells BASH to *interpret this*
 
 Note the difference between using "" and using '' symbols
+
 ```bash
-echo "$VARIABLE"
-echo '$VARIABLE'
+  echo "$VARIABLE"
+  echo '$VARIABLE'
 ```
 
 We can also perform commands and use it to set variables.
@@ -535,12 +583,11 @@ output to the variable. These subshells are written within brackets preceeded by
 the $ symbol. Again, this means *interpret this*.
 
 ```bash
-FILE1=$(ls /home/ec2-user/data/illumina/SRR5368359_1M_reads-F.fastq.gz)
-echo $File1
+  FILE1=$(ls /home/ec2-user/data/illumina/SRR5368359_1M_reads-F.fastq.gz)
+  echo $File1
 ```
 
 How can this help us write commands for our programs? - e.g. trimming
-
 
 ```bash
 INSTALL_DIRECTORY="/home/ec2-user/prog/trimmomatic/Trimmomatic-0.39"
@@ -567,17 +614,17 @@ This could:
   * performing an analysis each time on a different dataset.
 
 ```bash
-cd /home/ec2-user/test
-mkdir loops
-cd loops
+  cd /home/ec2-user/test
+  mkdir loops
+  cd loops
 ```
 
 ## The FOR loop
 
 ```bash
-for NUMBER in 1 2 3 4 5; do
-  echo "$NUMBER"
-done
+  for NUMBER in 1 2 3 4 5; do
+    echo "$NUMBER"
+  done
 ```
 
 How could we adapt this to make multiple directories?
@@ -596,12 +643,12 @@ Here are many input files:
   ls /home/ec2-user/data/looping
 ```
 
-we can use them as input for a loop:
+We can use them as input for a loop:
 
 ```bash
-for FILE in $(ls /home/ec2-user/data/looping); do
-  echo $FILE
-done
+  for FILE in $(ls /home/ec2-user/data/looping); do
+    echo $FILE
+  done
 ```
 
 There are other conditional statements such as IF and WHILE.
@@ -615,16 +662,23 @@ These are termed BASH scripts.
 
 Typically we give them the file extension .sh
 
+```bash
+  nano test.sh
+```
+
 These files start with a special line telling the cluster to read the file
 contents in the language of BASH. This is known as the shebang
 
 An simple bash script may look something like this:
 
 ```bash
-#!/bin/bash
-echo "Hello world"
+  #!/bin/bash
+  echo "Hello world"
 ```
-This could be saved to the file test.sh
+
+This can be saved to the file test.sh
+exit - using ctrl+x
+save - Y
 
 This is a very simple example, but a pipeline of analyses may be contained in a
 bash script e.g. trimming and genome assembly.
@@ -636,6 +690,8 @@ The file will be need to be made executable using the chmod command:
   chmod +x test.sh
   ls -lh test.sh
 ```
+
+Note the addition of the 'x' standing for executable to user, group and all permission columns.
 
 The program can then be run:
 
