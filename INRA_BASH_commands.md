@@ -63,7 +63,20 @@ https://courses.cs.washington.edu/courses/cse391/17sp/bash.html
 
 You will become familiar with commands are available as we progress.
 
+Core commands:
 
+```bash
+  pwd
+  ls
+  touch <file_name>
+  rm <file>
+  mkdir <directory_name>
+  cd <directory_location>
+  cp <original_file> <new_file>
+  mv <original_file> <new_file>
+  less <file>
+  nano <file>
+```
 
 
 # Step 3. How do I create / delete a file?
