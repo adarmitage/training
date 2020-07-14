@@ -401,6 +401,11 @@ onto multiple lines using the \ character.
     LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:25
 ```
 
+
+```bash
+  java -jar /home/ec2-user/prog/trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 -trimlog log.txt f_read.fq.gz r_read.fq.gz    f_read_trimmed_paired.fq.gz f_read_trimmed_unpaired.fq.gz r_read_trimmed_paired.fq.gz r_read_trimmed_unpaired.fq.gz ILLUMINACLIP:/home/ec2-user/prog/trimmomatic/Trimmomatic-0.39/adapters/illumina_PE.fasta:2:30:10 LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:25
+```
+
 ## 7.3 Viewing trimming outputs
 
 We got some output from running trimmomatic. What does it tell us?
