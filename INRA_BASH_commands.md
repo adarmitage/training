@@ -474,7 +474,7 @@ After reading the manual we may come to a conclusion on the commands we want to 
 Lets set the assembly running:
 
 ```bash
-  spades.py --isolate -m 4 --pe1-1 ../trimming/f_read_trimmed_paired.fq.gz --pe1-2 ../trimming/r_read_trimmed_paired.fq.gz -o spades-test
+  spades.py --isolate -m 2 --pe1-1 ../trimming/f_read_trimmed_paired.fq.gz --pe1-2 ../trimming/r_read_trimmed_paired.fq.gz -o spades-test
 ```
 
 <!--
