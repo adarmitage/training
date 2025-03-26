@@ -245,7 +245,7 @@ Note - as descibed above, "." means this location. We could alternatively, give
 a new filename and the file would be renamed when copied.
 
 ```bash
-  cp ../data/sanger/endoPG_alignment_trimmed.fa .
+  cp ../../../projects/group-nri-ph/NRI_training/data/sanger/endoPG_alignment_trimmed.fa .
 ```
 
 ## 5.3 Moving a file:
