@@ -213,7 +213,7 @@ These are termed BASH scripts.
 Typically we give them the file extension .sh
 
 ```bash
-  nano test.sh
+  nano bash_program1.sh
 ```
 
 These files start with a special line telling the cluster to read the file
@@ -226,7 +226,7 @@ An simple bash script may look something like this:
   echo "Hello world"
 ```
 
-This can be saved to the file test.sh
+This can be saved to the file bash_program1.sh
 exit - using ctrl+x
 save - Y
 
@@ -236,9 +236,9 @@ bash script e.g. trimming and genome assembly.
 The file will be need to be made executable using the chmod command:
 
 ```bash
-  ls -lh test.sh
-  chmod +x test.sh
-  ls -lh test.sh
+  ls -lh bash_program1.sh
+  chmod +x bash_program1.sh
+  ls -lh bash_program1.sh
 ```
 
 Note the addition of the 'x' standing for executable to user, group and all permission columns.
@@ -246,9 +246,60 @@ Note the addition of the 'x' standing for executable to user, group and all perm
 The program can then be run:
 
 ```bash
-  ./test.sh
+  ./bash_program1.sh
 ```
+
+
+# Step 13 Using variables in a script
 
 BASH scripts can make use of special variables containing information collected
 from the command line using variables $1, $2, etc. This allows you provide
 information such as file IDs for a script to act upon.
+
+```bash
+  nano bash_program2.sh
+```
+
+
+```bash
+  #!/bin/bash
+  echo “Hello world”
+  echo “Hello $1”
+```
+
+This can be saved to the file bash_program2.sh
+exit - using ctrl+x
+save - Y
+
+This is a very simple example, but a pipeline of analyses may be contained in a
+bash script e.g. trimming and genome assembly.
+
+As before, the file will be need to be made executable using the chmod command:
+
+```bash
+  chmod +x bash_program2.sh
+```
+
+Note the addition of the 'x' standing for executable to user, group and all permission columns.
+
+Because the program contains the variable $1, it will collect the first piece of information we give it from the command line. e.g. in this case, we can give our name.
+
+```bash
+  ./bash_program2.sh Andrew
+```
+
+
+<details>
+<summary>What output do you see here?
+<br>
+
+```bash
+  Hello world
+  Hello Andrew
+```
+
+</details>
+
+This is very useful for our scripting. We can use this to pass files into BASH scripts that can run our bioinformatic analyses.
+
+This allows us to write a generic script on how to run a program or analysis pipeline and then vary the input data going into it!
