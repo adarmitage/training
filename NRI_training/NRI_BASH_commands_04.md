@@ -81,14 +81,21 @@ Let's copy this entire director structure to our $ProjectDirectory
   DataDirectory=$(ls -d /projects/group-nri-ph/NRI_training/data/qc_dna)
   cp -r $DataDirectory $ProjectDirectory/.
 ```
-
-What does the -r flag mean here for the cp command?
+<details>
+<summary>  What does the -r flag mean here for the cp command?</summary>
+<br>
 
 copy recursively - this directory and all data within it.
 
-What does the "/." mean at the end of the cp command?
+</details>
+
+<details>
+<summary>  What does the "/." mean at the end of the cp command?</summary>
+<br>
 
 When referring to file structures in BASH "." typically means "here". In contrast, ".." means "up one directory"
+
+</details>
 
 
 Let's check that the data have been moved across correctly. Note that we can use * as a wildcard character, that will match any text available.

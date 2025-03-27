@@ -1,13 +1,21 @@
 # Advanced BASH concepts
 
 
-Let's go back to our sanger sequence data example
+Let's go back to our sanger sequence data example from yesterday
 
 ```bash
   cd ~/workshop1/fasta
   ls endoPG_alignment_trimmed.fa
 ```
 
+If this file doesn't exist then run the following commands:
+
+
+```bash
+  mkdir -p ~/workshop1/fasta
+  cd ~/workshop1/fasta
+  cp /projects/group-nri-ph/NRI_training/data/sanger/endoPG_alignment_trimmed.fa .
+```
 
 # Step 8 Expanded lists of simple BASH commands
 
