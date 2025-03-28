@@ -61,7 +61,7 @@ From the instructions in the manual above, I can install SPAdes myself.
 However, I will create a directory to hold this install in my $HOME area, alongside other installed programs:
 
 ```bash
-  mkdir ~/prog/spades
+  mkdir -p ~/prog/spades
   cd ~/prog/spades
   wget https://github.com/ablab/spades/releases/download/v4.1.0/SPAdes-4.1.0-Linux.tar.gz
   tar -xzf SPAdes-4.1.0-Linux.tar.gz
@@ -221,7 +221,7 @@ To do this, do the following:
 
 ```bash
   module load Anaconda3
-  init conda
+  conda init
 ```
 
 Now log out of the cluster and log back in again. You should now find that conda is running in the background, represented by the "base" you see next to your command prompt.
