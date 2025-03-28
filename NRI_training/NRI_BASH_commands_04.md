@@ -148,7 +148,7 @@ Remember it is ctrl+x to exit nano. You will want to save the changes that you m
 #SBATCH --mem=50G
 
 echo “Performing genome assembly”
-# module load SPAdes
+module load SPAdes
 
 F_Reads=$1
 R_Reads=$2
@@ -174,6 +174,10 @@ They allow us to pass-on three pieces of information from the command line into 
 In this case this information will be stored as location of two input files and the name for an output directory that will be created by the script.
 
 ## Submit our job onto the cluster
+
+```bash
+	module load SPAdes
+```
 
 Now that we have our commands packaged into a submission script, we can submit our job to the cluster.
 
