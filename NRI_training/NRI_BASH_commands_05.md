@@ -319,7 +319,7 @@ The access token is only generated once. It can never be viewed again once gener
 
 To generate a personal acces token you need to:
 1. Log into github and click on your face/icon in the top-right corner. Then fo to "Settings"
-2. IN the bottom left of the Settings page, select "<Developer Settings>"
+2. IN the bottom left of the Settings page, select "\<Developer Settings\>"
 3. On the left-hand panel, click "Personal access tokens". From that drop down list select "Tokens (classic)"
 4. In the central panel select "Generate new token"-> "Generate new token (classic)"
 5. You will need to enter your password / 2-factor authentication.
